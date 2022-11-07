@@ -7,8 +7,6 @@
         <div class="entry-content">
             <div class="container">
                 <div class="row">
-
-
                     <div id="primary" class="content-area col-lg-9 col-md-9 col-sm-12 col-xs-12 pull-right">
                         <main id="main" class="site-main">
 

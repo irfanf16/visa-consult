@@ -441,7 +441,7 @@
                                 <div>
                                     <div class="testi-item box-shadow-hover">
                                         <div class="testi-head">
-                                            <img width="50" height="50" src="images/review-user.jpg" class="client-img" alt="">
+                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
                                             <h5>Quynh Anh<span class="font12 normal">from Hanoi</span></h5>
                                         </div>
                                         <div class="line"></div>
@@ -456,7 +456,7 @@
                                 <div>
                                     <div class="testi-item box-shadow-hover">
                                         <div class="testi-head">
-                                            <img width="50" height="50" src="images/review-user.jpg" class="client-img" alt="">
+                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
                                             <h5>Nora Roberts<span class="font12 normal">from Paris</span></h5>
                                         </div>
                                         <div class="line"></div>
@@ -471,7 +471,7 @@
                                 <div>
                                     <div class="testi-item box-shadow-hover">
                                         <div class="testi-head">
-                                            <img width="50" height="50" src="images/review-user.jpg" class="client-img" alt="">
+                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
                                             <h5>John Doe<span class="font12 normal">from Beijing</span></h5>
                                         </div>
                                         <div class="line"></div>
@@ -486,7 +486,7 @@
                                 <div>
                                     <div class="testi-item box-shadow-hover">
                                         <div class="testi-head">
-                                            <img width="50" height="50" src="images/review-user.jpg" class="client-img" alt="">
+                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
                                             <h5>Quynh Anh<span class="font12 normal">from Hanoi</span></h5>
                                         </div>
                                         <div class="line"></div>
@@ -501,7 +501,7 @@
                                 <div>
                                     <div class="testi-item box-shadow-hover">
                                         <div class="testi-head">
-                                            <img width="50" height="50" src="images/review-user.jpg" class="client-img" alt="">
+                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
                                             <h5>Nora Roberts<span class="font12 normal">from Paris</span></h5>
                                         </div>
                                         <div class="line"></div>
@@ -516,7 +516,7 @@
                                 <div>
                                     <div class="testi-item box-shadow-hover">
                                         <div class="testi-head">
-                                            <img width="50" height="50" src="images/review-user.jpg" class="client-img" alt="">
+                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
                                             <h5>John Doe<span class="font12 normal">from Beijing</span></h5>
                                         </div>
                                         <div class="line"></div>
@@ -540,7 +540,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -550,7 +550,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -560,7 +560,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -570,7 +570,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -580,7 +580,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -590,7 +590,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -600,7 +600,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -610,7 +610,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -620,7 +620,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -630,7 +630,7 @@
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="images/affiliation.png" alt="">
+                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>

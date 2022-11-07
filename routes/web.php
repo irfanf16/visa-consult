@@ -43,6 +43,9 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('/contact-us', [App\Http\Controllers\Website\HomeController::class, 'contactUs'])->name('contact.us');
     Route::post('/contact-us', [App\Http\Controllers\Website\HomeController::class, 'contact'])->name('contact');
     Route::post('/subscribe', [App\Http\Controllers\Website\HomeController::class, 'subscribe'])->name('subscribe');
+    Route::get('/blogs/list', [App\Http\Controllers\Website\HomeController::class, 'blogs'])->name('blogs.list');
+    Route::get('/blog/{slug}', [App\Http\Controllers\Website\HomeController::class, 'blogDetail'])->name('blog.detail');
+    Route::get('/about-us', [App\Http\Controllers\Website\HomeController::class, 'aboutUs'])->name('about.us');
 });
 
 /*

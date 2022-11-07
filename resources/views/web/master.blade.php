@@ -115,8 +115,8 @@
 
                                             </ul>
                                         </li>
-                                        <li><a href="">About Us</a></li>
-                                        <li><a href="">Blogs</a></li>
+                                        <li><a href="{{route('about.us')}}">About Us</a></li>
+                                        <li><a href="{{route('blogs.list')}}">Blogs</a></li>
                                         <li><a href="{{route('contact.us')}}">Contact</a></li>
 
 
@@ -164,10 +164,10 @@
 
                             </ul>
                         </li>
-                        <li class="menu-item-has-children"><a href="">ABOUT US</a>
+                        <li class="menu-item-has-children"><a href="{{route('about.us')}}">ABOUT US</a>
 
                         </li>
-                        <li class="menu-item-has-children"><a href="">BLOGS</a>
+                        <li class="menu-item-has-children"><a href="{{route('blogs.list')}}">BLOGS</a>
 
                         </li>
                         <li><a href="{{route('contact.us')}}">CONTACT</a></li>
@@ -224,9 +224,9 @@
                             <div class="textwidget custom-html-widget">
                                 <ul class="padd-left">
 
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{{route('about.us')}}">About</a></li>
+                                    <li><a href="{{route('blogs.list')}}">Blogs</a></li>
+                                    <li><a href="{{route('about.us')}}">Contact</a></li>
                                 </ul>
                             </div>
                         </section>

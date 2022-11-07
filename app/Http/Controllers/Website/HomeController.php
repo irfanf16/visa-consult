@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Models\App;
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Subscriber;
@@ -27,7 +28,7 @@ class HomeController extends Controller
     {
         $category=Category::with('apps')->where('slug',$slug)->first();
         if ($category) {
-            return view('web.apps',get_defined_vars());
+            return view('web.all_visas',get_defined_vars());
         }
         abort(500);
     }
@@ -52,12 +53,13 @@ class HomeController extends Controller
 
     public function contactUs()
     {
-        return view('website.contact');
+        return view('web.contact');
     }
 
     public function contact(Request $request){
         $validated = $request->validate([
-            'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required',
             'contact_number' => 'required',
             'subject' => 'required',
@@ -65,7 +67,7 @@ class HomeController extends Controller
         ]);
 
         Contact::create([
-            'name'=>$request->name,
+            'name'=>$request->first_name. ' '.$request->last_name,
             'email'=>$request->email,
             'contact_number'=>$request->contact_number,
             'subject'=>$request->subject,
@@ -90,5 +92,19 @@ class HomeController extends Controller
         ]);
         Alert::success('Subscribe', 'You have subscribed successfully.');
         return back();
+    }
+    public function blogs(){
+        $blogs=Blog::where('status',true)->get();
+        return view('web.blogs',get_defined_vars());
+
+    }
+    public function blogDetail($slug){
+        $blog=Blog::where('slug',$slug)->first();
+        return view('web.blog-details',get_defined_vars());
+
+    }
+    public function aboutUs(){
+        return view('web.about-us');
+
     }
 }
