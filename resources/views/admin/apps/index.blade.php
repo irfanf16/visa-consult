@@ -106,7 +106,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
                                         @if($app->app_icon)
-                                        <img src="{{ asset('storage/apps/sm/'. $app->app_icon) }}" width="30%" alt="Quiz Image">
+                                        <img src="{{ asset('storage/apps/'. $app->app_icon) }}" width="30%" alt="Quiz Image">
                                           @else
                                           <img src="{{ asset('public/storage/apps/default.jpg') }}" width="30%"  >
                                           @endif

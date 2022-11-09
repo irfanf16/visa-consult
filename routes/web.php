@@ -37,7 +37,7 @@ Auth::routes();
 Route::group(['middleware' => ['guest']], function () {
 
     Route::get('/', [App\Http\Controllers\Website\HomeController::class, 'home'])->name('home');
-    Route::get('/{slug}/services/', [App\Http\Controllers\Website\HomeController::class, 'apps'])->name('services');
+    Route::get('/{slug}/service/', [App\Http\Controllers\Website\HomeController::class, 'apps'])->name('services');
     Route::get('/{slug}/app/policy', [App\Http\Controllers\Website\HomeController::class, 'appPolicy'])->name('app.policy');
     Route::get('/{slug}/service/detail', [App\Http\Controllers\Website\HomeController::class, 'appDetail'])->name('app.detail');
     Route::get('/contact-us', [App\Http\Controllers\Website\HomeController::class, 'contactUs'])->name('contact.us');
@@ -74,6 +74,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     // CATEGORIES
     Route::resource('/banners', \App\Http\Controllers\Admin\AdminBannerController::class);
     Route::resource('/blogs', \App\Http\Controllers\Admin\AdminBlogController::class);
+    Route::resource('/reviews', \App\Http\Controllers\Admin\AdminReviewsController::class);
+    Route::resource('/affliate', \App\Http\Controllers\Admin\AdminAffliateController::class);
     Route::resource('/categories', AdminCategoriesController::class);
     Route::resource('/services', AdminAppController::class);
     Route::get('subscriber',[\App\Http\Controllers\Admin\AdminSupportController::class,'subscribers'])->name('subscriber');

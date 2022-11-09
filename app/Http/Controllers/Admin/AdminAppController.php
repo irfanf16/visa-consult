@@ -92,7 +92,7 @@ class AdminAppController extends Controller
 //                'updated_date' => 'required',
             ]);
 
-            $app_icon = (object)$this->uploadBase64File($request->app_icon, "public", "apps/", true);
+//            $app_icon = (object)$this->uploadBase64File($request->app_icon, "public", "apps/", true);
 //            $splash_screen = (object)$this->uploadBase64File($request->splash_screen, "public", "apps/", true);
 
 
@@ -100,7 +100,7 @@ class AdminAppController extends Controller
                 'category_id' => $request->category_id,
                 'title' => $request->title,
                 'slug' => $this->createSlug('apps', $request->title),
-                'app_icon' => $app_icon->file_name,
+//                'app_icon' => $app_icon->file_name,
 //                'splash_screen' => $splash_screen->file_name,
 //                'seo_description' => $request->seo_description,
 //                'seo_keywords' => $request->seo_keywords,
@@ -115,7 +115,12 @@ class AdminAppController extends Controller
                 'status' => $request->status == "on" ? 1 : 0,
                 'featured' => $request->featured == "on" ? 1 : 0,
             ];
-
+            if ($image = $request->file('app_icon')) {
+                $destinationPath = 'storage/apps/';
+                $cat_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $cat_image);
+                $formData['app_icon'] = $cat_image;
+            }
             $app = App::create($formData);
 //            $app = App::first();
 
@@ -176,7 +181,7 @@ class AdminAppController extends Controller
             $validated = $request->validate([
                 'category_id' => 'nullable|integer',
                 'title' => 'required|string|max:255',
-                'app_icon' => 'nullable',
+//                'app_icon' => 'nullable',
 //                'splash_screen' => 'nullable',
 //                'seo_description' => 'nullable|string|max:255',
 //                'seo_keywords' => 'nullable|string|max:500',
@@ -203,15 +208,21 @@ class AdminAppController extends Controller
                 'status' => $request->status == "on" ? 1 : 0,
                 'featured' => $request->featured == "on" ? 1 : 0,
             ];
-            if ($request->app_icon) {
-                $app_icon = (object)$this->uploadBase64File($request->app_icon, "public", "apps/", true);
-                $formData['app_icon'] = $app_icon->file_name;
-            }
-            if ($request->splash_screen) {
-                $splash_screen = (object)$this->uploadBase64File($request->splash_screen, "public", "apps/", true);
-                $formData['splash_screen'] = $splash_screen->file_name;
-            }
+//            if ($request->app_icon) {
+//                $app_icon = (object)$this->uploadBase64File($request->app_icon, "public", "apps/", true);
+//                $formData['app_icon'] = $app_icon->file_name;
+//            }
+//            if ($request->splash_screen) {
+//                $splash_screen = (object)$this->uploadBase64File($request->splash_screen, "public", "apps/", true);
+//                $formData['splash_screen'] = $splash_screen->file_name;
+//            }
 
+            if ($image = $request->file('app_icon')) {
+                $destinationPath = 'storage/apps/';
+                $cat_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $cat_image);
+                $formData['app_icon'] = $cat_image;
+            }
             $app = App::find($id);
             $app->update($formData);
 

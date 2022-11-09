@@ -19,7 +19,7 @@
                                                     <div class="column-inner">
                                                         <div class="wpb_wrapper">
                                                             <img class="radius"
-                                                                 src="{{ asset('storage/apps/sm/'. $app->app_icon) }}"
+                                                                 src="{{ asset('storage/apps/'. $app->app_icon) }}"
                                                                  alt="">
                                                             <br>
                                                             <br>

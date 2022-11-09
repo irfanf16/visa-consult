@@ -438,95 +438,24 @@
 
                             <div class="testi-slider" data-show="3" data-arrow="true">
 
+                                @foreach($reviews as $review)
+
                                 <div>
                                     <div class="testi-item box-shadow-hover">
                                         <div class="testi-head">
-                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
-                                            <h5>Quynh Anh<span class="font12 normal">from Hanoi</span></h5>
+                                            <img width="50" height="50" src="{{ asset('/storage/reviews/'. $review->image) }}" class="client-img" alt="">
+                                            <h5>{{$review->name}}</h5>
                                         </div>
                                         <div class="line"></div>
                                         <div class="testi-content">
                                             <i class="ion-md-quote"></i>
 
-                                            <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. Thank you !</p>
+                                            <p>{!! $review->review !!}</p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div>
-                                    <div class="testi-item box-shadow-hover">
-                                        <div class="testi-head">
-                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
-                                            <h5>Nora Roberts<span class="font12 normal">from Paris</span></h5>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="testi-content">
-                                            <i class="ion-md-quote"></i>
-
-                                            <p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="testi-item box-shadow-hover">
-                                        <div class="testi-head">
-                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
-                                            <h5>John Doe<span class="font12 normal">from Beijing</span></h5>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="testi-content">
-                                            <i class="ion-md-quote"></i>
-
-                                            <p>I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="testi-item box-shadow-hover">
-                                        <div class="testi-head">
-                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
-                                            <h5>Quynh Anh<span class="font12 normal">from Hanoi</span></h5>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="testi-content">
-                                            <i class="ion-md-quote"></i>
-
-                                            <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. Thank you !</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="testi-item box-shadow-hover">
-                                        <div class="testi-head">
-                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
-                                            <h5>Nora Roberts<span class="font12 normal">from Paris</span></h5>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="testi-content">
-                                            <i class="ion-md-quote"></i>
-
-                                            <p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="testi-item box-shadow-hover">
-                                        <div class="testi-head">
-                                            <img width="50" height="50" src="{{asset('web/images/review-user.jpg')}}" class="client-img" alt="">
-                                            <h5>John Doe<span class="font12 normal">from Beijing</span></h5>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="testi-content">
-                                            <i class="ion-md-quote"></i>
-
-                                            <p>I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
 
                             </div>
 
@@ -536,105 +465,17 @@
                             <h2 class="section-title">Our Affiliations</h2>
                             <div class="partner-slider image-carousel text-center" data-show="5" data-arrow="false">
 
+                                @foreach($affliates as $affliate)
                                 <div>
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
+                                                <img src="{{ asset('/storage/affliate/'. $category->image) }}" alt="">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div>
-                                    <div class="partner-item text-center clearfix">
-                                        <div class="inner">
-                                            <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="partner-item text-center clearfix">
-                                        <div class="inner">
-                                            <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="partner-item text-center clearfix">
-                                        <div class="inner">
-                                            <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="partner-item text-center clearfix">
-                                        <div class="inner">
-                                            <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="partner-item text-center clearfix">
-                                        <div class="inner">
-                                            <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="partner-item text-center clearfix">
-                                        <div class="inner">
-                                            <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="partner-item text-center clearfix">
-                                        <div class="inner">
-                                            <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="partner-item text-center clearfix">
-                                        <div class="inner">
-                                            <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div class="partner-item text-center clearfix">
-                                        <div class="inner">
-                                            <div class="thumb">
-                                                <img src="{{asset('web/images/affiliation.png')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
 
                             </div>
                         </div>

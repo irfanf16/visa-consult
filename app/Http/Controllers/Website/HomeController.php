@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Affliate;
 use App\Models\App;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Review;
 use App\Models\Subscriber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -20,6 +22,9 @@ class HomeController extends Controller
         $categories=Category::where('featured',1)->get();
         $apps=App::where('featured',1)->get();
         $banners=Banner::where('status',true)->get();
+        $affliates=Affliate::where('status',true)->get();
+        $reviews=Review::where('status',true)->get();
+
         return view('web.home',get_defined_vars());
         return view('website.home',get_defined_vars());
     }

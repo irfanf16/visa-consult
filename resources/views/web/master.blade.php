@@ -164,10 +164,10 @@
 
                             </ul>
                         </li>
-                        <li class="menu-item-has-children"><a href="{{route('about.us')}}">ABOUT US</a>
+                        <li ><a href="{{route('about.us')}}">ABOUT US</a>
 
                         </li>
-                        <li class="menu-item-has-children"><a href="{{route('blogs.list')}}">BLOGS</a>
+                        <li><a href="{{route('blogs.list')}}">BLOGS</a>
 
                         </li>
                         <li><a href="{{route('contact.us')}}">CONTACT</a></li>
@@ -222,7 +222,7 @@
                         <section id="custom_html-3" class="widget_text widget widget_custom_html padding-left">
                             <h4 class="widget-title">Company</h4>
                             <div class="textwidget custom-html-widget">
-                                <ul class="padd-left">
+                                <ul class="padding-left">
 
                                     <li><a href="{{route('about.us')}}">About</a></li>
                                     <li><a href="{{route('blogs.list')}}">Blogs</a></li>

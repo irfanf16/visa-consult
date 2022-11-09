@@ -39,7 +39,7 @@
 										<article class="news-item content-area">
 											<div class="inner-item radius-top">
 												<div class="thumb-image">
-													<a href="{{route('blog.detail')}}">
+													<a href="{{route('blog.detail',$blog->slug)}}">
 														<img src="{{ asset('/storage/blogs/'. $blog->image) }}" alt="">
 													</a>
 												</div>
@@ -49,16 +49,16 @@
 															<time class="entry-date">{{$blog->created_at->format('D-m-Y')}}</time>
 														</span>
 														<span class="posted-in">
-															<a href="{{route('blog.detail')}}">Consulting</a>
+															<a href="{{route('blog.detail',$blog->slug)}}">Consulting</a>
 														</span>
 													</div>
 													<h4 class="entry-title">
-														<a href="{{route('blog.detail')}}">{{$blog->title}}</a>
+														<a href="{{route('blog.detail',$blog->slug)}}">{{$blog->title}}</a>
 													</h4>
 													<p>
                                                         {{$blog->short_description}}
 													</p>
-													<a class="post-link" href="{{route('blog.detail')}}">Read more</a>
+													<a class="post-link" href="{{route('blog.detail',$blog->slug)}}">Read more</a>
 												</div>
 											</div>
 										</article>
