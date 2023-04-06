@@ -465,12 +465,14 @@
                             <h2 class="section-title">Our Affiliations</h2>
                             <div class="partner-slider image-carousel text-center" data-show="5" data-arrow="false">
 
+
+
                                 @foreach($affliates as $affliate)
                                 <div>
                                     <div class="partner-item text-center clearfix">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="{{ asset('/storage/affliate/'. $category->image) }}" alt="">
+                                                <img src="{{ asset('/storage/affliate/'. $affliate->image) }}" alt="">
                                             </div>
                                         </div>
                                     </div>

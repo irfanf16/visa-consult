@@ -6,10 +6,14 @@
         }
     </style>
     <!-- LOGO -->
+    @php
+        $setting=\App\Models\Setting::first();
+    @endphp
     <div class="brand">
+
         <a href="{{ URL::to('/admin/dashboard') }}" class="logo">
                 <span>
-                    <img src="{{ URL::asset('assets/images/logo.svg') }}" alt="logo-small" class="w-50">
+                    <img src="{{ asset('/storage/setting/'. $setting->site_logo) }} " alt="logo-small" class="w-50">
                 </span>
         </a>
     </div>
@@ -213,6 +217,12 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a href="{{ route('setting') }}">
+                    <i data-feather="grid" class="align-self-center menu-icon"></i>
+                    <span>Setting</span>
+                </a>
             </li>
         </ul>
     </div>

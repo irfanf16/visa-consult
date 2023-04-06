@@ -68,6 +68,8 @@ Route::post('/update-password/{id}', [App\Http\Controllers\HomeController::class
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     // DASHBOARD
     Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+    Route::get('/setting', [AdminDashboardController::class, 'setting'])->name('setting');
+    Route::post('/setting', [AdminDashboardController::class, 'saveSetting']);
     Route::resource('/users', AdminUsersController::class);
 
 
@@ -85,3 +87,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 Route::get('category/import', [\App\Http\Controllers\ImportController::class, 'categoryimportForm'])->name('categoryimportForm');
 Route::post('category/import', [\App\Http\Controllers\ImportController::class, 'categoryImport'])->name('categoryImport');
+  Route::get('mail',function (){
+      return view('mail.contact');
+  });

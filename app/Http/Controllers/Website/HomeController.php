@@ -12,6 +12,7 @@ use App\Models\Contact;
 use App\Models\Review;
 use App\Models\Subscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -78,6 +79,13 @@ class HomeController extends Controller
             'subject'=>$request->subject,
             'message'=>$request->message,
         ]);
+        $mailData = [
+            'title' => 'Mail from ItSolutionStuff.com',
+            'body' => 'This is for testing email using smtp.'
+        ];
+
+        Mail::to('andy@successfulmigration.com.au')->send(new \App\Mail\Contact($mailData));
+
         Alert::success('Contact', 'Your Request submitted successfully.');
         return back();
     }

@@ -26,7 +26,9 @@
 </head>
 <body class="royal_preloader">
 <div id="page" class="site">
-
+    @php
+        $setting=\App\Models\Setting::first();
+    @endphp
     <header id="site-header" class="site-header mobile-header-blue header-style-1">
         <!--<div id="header_topbar" class="header-topbar clearfix">-->
         <!--    <div class="container">-->
@@ -60,8 +62,8 @@
                             <div class="col-wrap-table">
                                 <div id="site-logo" class="site-logo col-media-left col-media-middle">
                                     <a href="#">
-                                        <img class="" src="{{asset('web/images/smes-logo.png')}}" width="280" alt="Consultax">
-                                        <img class="logo-scroll" src="{{asset('web/images/smes-logo.png')}}" alt="Consultax">
+                                        <img class="" src="{{ asset('/storage/setting/'. $setting->site_logo) }} " width="280" alt="Consultax">
+                                        <img class="logo-scroll" src="{{ asset('/storage/setting/'. $setting->site_logo) }} " alt="Consultax">
                                     </a>
                                 </div>
                                 <div class="col-media-body col-media-middle">
@@ -192,10 +194,7 @@
                         <h4 class="widget-title">About Us</h4>
                         <div id="custom_html-1" class="widget_text widget widget_custom_html">
                             <div class="textwidget custom-html-widget">
-                                <p>SMES Consultants is an Australian based organisation located in Melbourne. All our
-                                    consultants are professionals striving to achieve the best outcomes for our clients.
-                                    We are bound to follow the Australian migration laws keeping abreast with the
-                                    dynamic changes that occur in the Migration Act 1958 and Regulations 1994.</p>
+                                {!! $setting->about_us !!}
 
                             </div>
                         </div>
@@ -240,10 +239,13 @@
                             <!-- contact info -->
                             <ul class="info-list info_on_right_side fright">
                                 <li>
-                                    <span>Address: <strong class="font-size18">Level 3, 480 collins street, melbourne CBD, VIC 3000, Australia.</strong></span>
+                                    <span>Address: <strong class="font-size18">{{$setting->address}}</strong></span>
                                 </li>
                                 <li>
-                                    <span>Mobile: <strong class="font-size18">0406 710 999</strong></span>
+                                    <span>Mobile: <strong class="font-size18">{{$setting->phone}}</strong></span>
+                                </li>
+                                <li>
+                                    <span>Email: <strong class="font-size18">{{$setting->email}}</strong></span>
                                 </li>
                             </ul>
                             <!-- contact info close -->

@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\App;
 use App\Models\Contact;
+use App\Models\Review;
+use App\Models\Setting;
 use App\Models\Subscriber;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -40,6 +43,51 @@ class AdminDashboardController extends Controller
         } catch (\Throwable $th) {
             throw $th;
         }
+    }
+
+    public function setting()
+    {
+     $setting=Setting::first();
+        return view('admin.setting', get_defined_vars());
+    }
+
+    public function saveSetting(Request $request)
+    {
+        $validated = $request->validate([
+            'email' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+            'about_us' => 'required|string|max:255',
+
+        ]);
+        $formData = [
+
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'about_us' => $request->about_us,
+        ];
+        if ($image = $request->file('admin_logo')) {
+            $destinationPath = 'storage/setting/';
+            $cat_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $cat_image);
+            $formData['admin_logo'] = $cat_image;
+        }
+        if ($image = $request->file('site_logo')) {
+            $destinationPath = 'storage/setting/';
+            $cat_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $cat_image);
+            $formData['site_logo'] = $cat_image;
+        }
+
+        Setting::first()->update($formData);
+
+        Session::flash('Alert', [
+            'status' => 200,
+            'message' => 'Setting is updated successfully.'
+        ]);
+
+        return back();
     }
 
 

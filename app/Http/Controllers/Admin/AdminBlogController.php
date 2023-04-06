@@ -73,11 +73,13 @@ class AdminBlogController extends Controller
         try {
             $validated = $request->validate([
                 'title' => 'required|string|max:255',
-                'description' => 'nullable|string|max:255',
+                'short_description' => 'nullable|string',
+                'description' => 'nullable|string',
             ]);
             $formData = [
 
                 'title' => $request->title,
+                'short_description' => $request->short_description,
                 'description' => $request->description,
                 'slug' => $this->createSlug('blogs', $request->title),
                 'status' => $request->status == "on" ? 1 : 0,
@@ -148,12 +150,14 @@ class AdminBlogController extends Controller
         try {
             $validated = $request->validate([
                 'title' => "required|string|max:255",
-                'description' => 'nullable|string|max:100',
+                'short_description' => 'nullable|string',
+                'description' => 'nullable|string',
             ]);
 
             $category = Category::where('id', $id)->first();
             $formData = [
                 'title' => $request->title,
+                'short_description' => $request->short_description,
                 'description' => $request->description,
                 'status' => $request->status == "on" ? 1 : 0,
             ];

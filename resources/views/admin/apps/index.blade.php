@@ -112,7 +112,7 @@
                                           @endif
                                     </td>
                                     <td>{{ $app->title }}</td>
-                                    <td>{{ $app->category->title}}</td>
+                                    <td>{{ $app->category->title ?? 'N/A' }}</td>
                                     <td>
                                         @if ($app->status)
                                             <span class="badge badge-soft-success">Active</span>

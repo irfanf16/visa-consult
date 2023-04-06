@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Blog
+    Setting
 @endsection
 
 @section('css')
@@ -10,13 +10,13 @@
 @section('content')
     @component('components.breadcrumb')
         @slot('title')
-            Blogs
+            Setting
         @endslot
         @slot('li_1')
-            Blogs
+            Setting
         @endslot
         @slot('li_2')
-            create
+            Setting
         @endslot
     @endcomponent
 
@@ -62,19 +62,12 @@
                 <div class="card-header border-0">
                     <div class="row">
                         <div class="col-md-10">
-                            <h4 class="card-title">Create New Blog</h4>
-                            <p class="text-muted mb-0">Create</p>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="{{ URL::to('/admin/blogs') }}" class="btn btn-soft-secondary float-right w-100"
-                                title="Go back to categories listing page">
-                                Back
-                            </a>
+                            <h4 class="card-title">Setting</h4>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <form class="form-parsley" action="{{ URL::to('/admin/blogs') }}" method="POST" novalidate enctype="multipart/form-data">
+                    <form class="form-parsley" action="{{ URL::to('/admin/setting') }}" method="POST" novalidate enctype="multipart/form-data">
                         @csrf
 
                          {{-- App_type_id --}}
@@ -83,43 +76,51 @@
 
                         {{-- Blog_id --}}
 
-                        {{-- title --}}
+                        {{-- email --}}
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" name="title"
-                                placeholder="enter title here" data-parsley-maxlength="200" required>
-                            <label for="floatingInput">Title</label>
+                            <input type="email" class="form-control" id="floatingInput" name="email"
+                              value="{{$setting->email ?? ''}}"  placeholder="enter email here" data-parsley-maxlength="200" required>
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        {{-- phone --}}
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" name="phone"
+                                   value="{{$setting->phone ?? ''}}"    placeholder="enter phone here" data-parsley-maxlength="200" required>
+                            <label for="floatingInput">Phone</label>
+                        </div>
+                        {{-- phone --}}
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" name="address"
+                                   value="{{$setting->address ?? ''}}" placeholder="enter address here" data-parsley-maxlength="200" required>
+                            <label for="floatingInput">address</label>
                         </div>
 
                            {{--  image  --}}
-                           <div class="form-floating mb-3">
-                            <input type="file" name="image" class="form-control">
+
+                        <div class="form-floating mb-3">
+                            <input type="file" name="admin_logo" class="form-control" >
+                            <label for="basic-conf"> Admin logo </label>
+                            <img src="{{ asset('storage/setting/'. $setting->admin_logo ?? '') }}" width="30%" alt="Category Image">
+
+                        </div>
+                        {{--  image  --}}
+
+                        <div class="form-floating mb-3">
+                            <input type="file" name="site_logo" class="form-control" >
+                            <label for="basic-conf"> Site logo </label>
+                            <img src="{{ asset('storage/setting/'. $setting->site_logo ?? '') }}" width="30%" alt="Category Image">
+
                         </div>
 
                         <div class="form-floating mb-3">
-                            <textarea class="form-control basic-conf" placeholder="write Short Description" id="basic-conf"
-                                      name="short_description"
-                                      style="height: 100px" ></textarea>
-                            <label for="basic-conf">Short Description </label>
+                            <textarea class="form-control basic-conf" placeholder="write Review Description" id="basic-conf"
+                                      name="about_us"
+                                      style="height: 100px" >{{$setting->about_us ?? ''}}</textarea>
+                            <label for="basic-conf"> About Us </label>
                         </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control basic-conf" placeholder="write Detailed Description" id="basic-conf"
-                                      name="description"
-                                      style="height: 100px" ></textarea>
-                            <label for="basic-conf"> Description </label>
-                        </div>
-
-
-                        {{-- status --}}
-                        <div class="form-floating mb-3">
-                            <div class="form-check form-switch">
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Status</label>
-                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="status">
-                            </div>
-                        </div>
-
 
                         <button type="submit" class="btn btn-success f-right">
-                            Create
+                            Update
                         </button>
                     </form>
                 </div>

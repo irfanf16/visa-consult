@@ -95,6 +95,12 @@
                           <div class="form-floating mb-3 mt-3">
                              <input type="file" name="image" class="form-control" >
                          </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control basic-conf" placeholder="write Short Description" id="basic-conf"
+                                      name="short_description"
+                                      style="height: 100px" >{{$category->short_description}}</textarea>
+                            <label for="basic-conf"> Short Description </label>
+                        </div>
 
                         <div class="form-floating mb-3">
                             <textarea class="form-control basic-conf" placeholder="write Detailed Description" id="basic-conf"

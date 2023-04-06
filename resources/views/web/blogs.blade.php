@@ -56,7 +56,7 @@
 														<a href="{{route('blog.detail',$blog->slug)}}">{{$blog->title}}</a>
 													</h4>
 													<p>
-                                                        {{$blog->short_description}}
+                                                        {!! $blog->short_description !!}
 													</p>
 													<a class="post-link" href="{{route('blog.detail',$blog->slug)}}">Read more</a>
 												</div>
